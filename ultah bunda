@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun untuk Bunda</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif; /* Changed font to a more elegant style */
+            background-image: url('https://www.example.com/your-background-image.jpg'); /* Replace with a real image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            backdrop-filter: blur(5px); /* Blurring background for a soft effect */
+        }
+        h1 {
+            color: #ff69b4; /* Pink color for the title */
+            font-size: 3em; /* Increased font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added shadow for better visibility */
+        }
+        .hidden {
+            display: none;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #2e8b57; /* Dark green for message */
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for readability */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px; /* Set a fixed width for inputs */
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4; /* Pink button */
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Ulang Tahun, Bunda!</h1>
+    
+    <p>Isi nama anak pertama dan makanan kesukaan abang:</p>
+    <input type="text" id="childName" placeholder="Nama Anak Pertama" />
+    <input type="text" id="favoriteFood" placeholder="Makanan Kesukaan Abang" />
+    <button onclick="checkInput()">Kirim</button>
+    
+    <div id="message" class="hidden message">
+        <p>Selamat Ulang Tahun, Bunda!</p>
+        <p>Nama anak pertama ibu: <span id="displayChildName"></span></p>
+        <p>Makanan kesukaan abang: Ayam</p>
+        <p>Selamat ulang tahun, Bunda tercinta!
+
+            Di hari yang istimewa ini, aku ingin mengungkapkan betapa berartinya dirimu dalam hidupku. Sejak aku lahir, kasih sayang dan perhatianmu telah menjadi sumber kekuatanku. Kau adalah sosok yang selalu ada untukku, mendukung dan memotivasi dalam setiap langkah yang kuambil.
+            
+            Bunda, aku tidak bisa menghitung berapa banyak pengorbanan yang telah kau lakukan untukku. Dari setiap pelukan hangat hingga nasihat bijak yang kau berikan, semuanya telah membentuk siapa aku hari ini. Setiap momen yang kita habiskan bersama adalah kenangan yang akan selalu aku simpan dalam hati.
+            
+            Hari ini, aku berharap agar segala doa dan harapanmu terwujud. Semoga setiap tahun yang berlalu membawa kebahagiaan dan kesehatan yang melimpah untukmu. Kau pantas mendapatkan semua cinta dan kebahagiaan di dunia ini.
+            
+            Terima kasih telah menjadi Ibu yang luar biasa, sahabat terbaik, dan guru kehidupan yang tak ternilai. Aku mencintaimu lebih dari kata-kata bisa ungkapkan. Semoga ulang tahunmu kali ini dipenuhi dengan senyuman, tawa, dan cinta dari semua orang yang menyayangimu.
+            
+            Selamat ulang tahun, Bunda! Semoga hari ini dan seterusnya selalu menjadi milikmu yang terbaik!
+            
+            Dengan seluruh cinta dari anakmu, Zetha</p>
+    </div>
+
+    <script>
+        function checkInput() {
+            const childName = document.getElementById('childName').value;
+            const favoriteFood = document.getElementById('favoriteFood').value;
+
+            // Cek apakah input sesuai dengan yang diinginkan
+            if (childName.toLowerCase() === 'zetha' && favoriteFood.toLowerCase() === 'ayam') {
+                document.getElementById('displayChildName').textContent = childName;
+                document.getElementById('message').classList.remove('hidden');
+            } else {
+                alert('Pastikan nama anak pertama diisi dengan "Zetha" dan makanan kesukaan abang adalah "Ayam".');
+            }
+        }
+    </script>
+</body>
+</html>
