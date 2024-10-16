@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Semangat untuk Pripta Apriyani</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('https://www.example.com/your-background-image.jpg'); /* Ganti dengan URL gambar yang benar */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 2s; /* Animasi fade-in pada body */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s infinite alternate; /* Animasi bouncing pada judul */
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff69b4; /* Efek fokus pada input */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em; /* Ubah font-size agar lebih kecil dan sesuai dengan layar mobile */
+            color: #2e8b57;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s; /* Animasi slide-in untuk pesan */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Desain responsif */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px;
+            }
+            .message {
+                font-size: 1em; /* Perkecil font pada perangkat mobile */
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ucapan Semangat untuk Sahabat!</h1>
+    <div class="container">
+        <div id="step1">
+            <p>Isi nama kamu:</p>
+            <input type="text" id="yourName" placeholder="Nama Kamu" />
+            <button onclick="nextStep()">Kirim</button>
+        </div>
+
+        <div id="step2" class="hidden">
+            <p>Apakah kamu sedang sibuk?</p>
+            <button onclick="handleBusyResponse(true)">Sibuk</button>
+            <button onclick="handleBusyResponse(false)">Tidak Sibuk</button>
+        </div>
+
+        <div id="message" class="hidden message"></div>
+    </div>
+
+    <script>
+        function nextStep() {
+            const yourName = document.getElementById('yourName').value;
+
+            // Cek apakah input tidak kosong
+            if (yourName.trim() !== '') {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+            } else {
+                alert('Silakan masukkan namamu.');
+            }
+        }
+
+        function handleBusyResponse(isBusy) {
+            const yourName = document.getElementById('yourName').value;
+            const messageElement = document.getElementById('message');
+
+            if (isBusy) {
+                messageElement.innerHTML = `
+                    <p>Halo, ${yourName}! Aku paham bahwa kamu sedang sibuk dengan berbagai aktivitasmu. Kesibukan memang bisa membuat kita merasa tertekan, tetapi jangan lupakan betapa berharganya waktu untuk dirimu sendiri. Aku hanya ingin mengingatkanmu bahwa di balik setiap kesibukan yang kamu jalani, ada hal-hal kecil yang perlu kita syukuri. Jangan ragu untuk mengambil waktu sejenak untuk beristirahat dan merenungkan pencapaianmu. Kamu adalah sosok yang kuat dan aku yakin semua kerja kerasmu akan membuahkan hasil yang memuaskan. Ingatlah bahwa meskipun kita terpisah oleh kesibukan, aku selalu mendukungmu dari jauh. Semangat, ya!</p>
+                `;
+            } else {
+                messageElement.innerHTML = `
+                    <p>Hai, ${yourName}! Senang mendengar kamu tidak sibuk. Ini adalah kesempatan baik untuk berbagi sesuatu yang sudah lama ingin aku ungkapkan. Sebenarnya ya kamu kan tau aku benar-benar suka sama kamu. Walaupun kamu mungkin lagi nggak menerima siapa-siapa saat ini, aku merasa perlu untuk mengungkapkan lagi perasaanku. Kamu adalah sahabat terbaikku, dan kehadiranmu dalam hidupku sangat berarti. Setiap momen kita bersama, semua tawa dan cerita, membuatku semakin yakin bahwa kamu adalah orang yang tepat. Terima kasih telah menjadi dirimu yang begitu istimewa dan selalu ada untukku. Aku mencintaimu, dan harapanku adalah agar kita bisa selalu saling mendukung satu sama lain, apapun yang terjadi.</p>
+                `;
+            }
+
+            messageElement.classList.remove('hidden');
+            document.getElementById('step2').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
